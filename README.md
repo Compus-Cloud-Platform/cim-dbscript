@@ -1,3 +1,2 @@
-# test
-dfdsfasfdas
-hkjhkjhkj
+# cim-datascript
+tables and init data
