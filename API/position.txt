@@ -1,0 +1,12 @@
+API insert
+http://localhost:8080/cim-services/rest/position/save?jsonString={"name":"副校长","description":"副校长","createTime":"2015-04-21 22:24:04","operId":22}
+
+
+API delete
+http://localhost:8080/cim-services/rest/position/delete?id=12
+
+API update
+http://localhost:8080/cim-services/rest/position/update?jsonString={"name":"副校长1","id":12}
+
+API search
+http://localhost:8080/cim-services/rest/position/search?id=12

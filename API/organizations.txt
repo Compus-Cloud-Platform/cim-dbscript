@@ -1,0 +1,33 @@
+API 1 insert
+
+// 目前规定 name 不能不填 或者为null 其他都可以
+http://localhost:8080/cim-services/rest/organization/save?jsonString={"name":"上海大学","code":"10248","description":"上海大学是我国历史最悠久的高等学府之一。","createDate":"2015-04-21 22:24:04","updateDate":"2015-04-21 22:24:04","createBy":22}
+{"ack":"success"}
+
+http://localhost:8080/cim-services/rest/organization/save?jsonString={"code":"10248","address":"","createDate":"2015-04-21 22:24:04","updateDate":"2015-04-21 22:24:04","createBy":22}
+{"errors":{"field":"name","description":"name is null or nonexist","code":2001},"ack":"failure"}
+
+API 2 update
+目前不做限制 后续增加 那些字段不可以
+id 必须存在且 存在这个id 对应的数据  否则报错
+http://localhost:8080/cim-services/rest/organization/update?jsonString={"id":19,"code":"1024"}
+{"ack":"success"}
+
+if  "id":19 not exist
+{"errors":{"field":"id","description":"id is null or nonexist","code":2002},"ack":"failure"}
+
+API 3 delete
+
+传递id
+http://localhost:8080/cim-services/rest/organization/delete?id=19
+{"ack":"success"}
+not find
+{"errors":{"field":"id","description":"id is null or nonexist","code":2002},"ack":"failure"}
+
+API 4 get
+
+http://localhost:8080/cim-services/rest/organization/search?id=19
+{"errors":{"field":"id","description":"id is null or nonexist","code":2002},"ack":"failure"}
+
+http://localhost:8080/cim-services/rest/organization/search?id=4
+{"datanum":1,"ack":"success","data":[{"id":4,"phone":"021-64252410","fax":"021-64252410","webSite":"http://www.ecust.edu.cn/","address":"上海北梅陇路130号","description":"华东理工大学原名华东化工学院，其办学历史可以追溯到100多年前的南洋公学和震旦学院，是1952年全国高校院","name":"华东理工大学","code":"10251","createDate":1429626244000,"createBy":1}]}

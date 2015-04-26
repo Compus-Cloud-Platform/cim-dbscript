@@ -1,0 +1,62 @@
+API 1 login
+测试结果
+http://localhost:8080/cim-services/rest/v1/users?userName=luli.dai&password=123456
+{"ack":"success","data":{"id":3,"loginId":"luli.dai","token":null}}
+http://localhost:8080/cim-services/rest/v1/users?userName=luli.dai&password=1234561
+{"errors":{"field":"password","description":"Password is incorrect","code":1001},"ack":"failure"}
+http://localhost:8080/cim-services/rest/v1/users?userName=luli&password=123456
+{"errors":{"field":"loginId","description":"loginId is not exist","code":1002},"ack":"failure"}
+
+API 2 insert
+时间传递必须 年月日时分秒
+没有时分秒 写上0  2015-04-21 0:0:0
+http://localhost:8080/cim-services/rest/v1/save?jsonString={"loginId":"testlogin","name":"testname","loginPassword":"123456","email":"test@163.com","PositionId":1,"employDate":"2015-04-21 0:0:0","createTime":"2015-04-21 22:24:04","orgId":1,"operId":1,"sex":"1","brithday":"2015-04-21 22:24:04","thumb":"","phone":"15109243666","address":"上海"}
+{"ack":"success","data":{"id":5}}
+再次运行上次命令
+{"errors":{"field":"loginId","description":"Account ID already exist","code":1003},"ack":"failure"}
+
+API 3 update
+必须传递loginId字段
+其他字段如果传递 将跟新指定字段
+
+/*将login id 中name修改为testname1 其他字段不变 */
+http://localhost:8080/cim-services/rest/v1/update?jsonString={"loginId":"testlogin","name":"testname1"}
+{"ack":"success"}
+/* 后续可以增加字段校验 哪些不可以更改*/
+
+http://localhost:8080/cim-services/rest/v1/update?jsonString={"loginId":"testlogin1","name":"testname1"}
+不存在testlogn1用户
+{"errors":{"field":"loginId","description":"loginId not exist","code":1005},"ack":"failure"}
+
+API 4 delete
+/* 校验功能随着以后增加 目前根据loginid 删除 */
+http://localhost:8080/cim-services/rest/v1/delete?loginId=testlogin
+{"ack":"success"}
+if not find
+{"errors":{"description":"loginId not exist","code":1006},"ack":"failure"}
+
+
+API 5 get
+
+get 方法提交
+
+考虑到以后返回数据不止一条 所以修改一下返回方式 data里面是 jsonArray
+
+
+http://localhost:8080/cim-services/rest/v1/search?id=1
+{"datanum":1,"ack":"success","data":[{"operId":1,"loginId":"rui.gao","createTime":1429626244000,"phone":"13918441215","sex":"1","loginPassword":"123456","employDate":1429545600000,"id":1,"orgId":1,"email":"rui.gao@126.com","address":"上海","name":"高瑞","brithday":1429545600000,"PositionId":1,"thumb":null}]}
+
+if wrong
+{"errors":{"field":"id","description":"id not exist","code":1007},"ack":"failure"}
+
+
+
+
+
+
+
+
+
+
+
+
