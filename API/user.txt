@@ -19,16 +19,24 @@ http://localhost:8080/cim-services/rest/v1/users/13
 
 put
 
-para {"loginId":"testlogin","name":"testname","loginPassword":"123456","email":"test@163.com","PositionId":1,"employDate":"2015-04-21 0:0:0","orgId":1,"operId":1,"sex":"1","brithday":"2015-04-21 22:24:04","thumb":"","phone":"15109243666","address":"上海"}
+para {"loginId":"testlogin","name":"testname","loginPassword":"134156","email":"test@163.com","PositionId":1,"employDate":"2015-04-21 0:0:0","orgId":1,"operId":1,"sex":"1","brithday":"2015-04-21 22:24:04","thumb":"","phone":"15109243666","address":"上2海"}
 
 {"ack":"success","data":{"id":13}}
 
 
 API 4 delete
 
+http://localhost:8080/cim-services/rest/v1/users/29
+
+delete
+
+{"ack":"success","data":{"id":29}}
 
 
 API 5 get
+http://localhost:8080/cim-services/rest/v1/users/2
+
+get
 
 
 
