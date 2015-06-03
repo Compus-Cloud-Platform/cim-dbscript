@@ -15,12 +15,15 @@ VALUES (1,'校长','校长',NOW(),1),
 	   (5,'助教','助教',NOW(),1),
 	   (6,'辅导员','辅导员',NOW(),1),
 	   (7,'主任','主任',NOW(),1),
-	   (8,'学生','学生',NOW(),1);
+	   (8,'系统管理员','系统管理员',NOW(),1),
+	   (9,'校内管理员','校内管理员',NOW(),1),
+	   (10,'老师','老师',NOW(),1),
+	   (11,'学生','学生',NOW(),1);
 UNLOCK TABLES;
 
 LOCK TABLES `USER_LOGIN` WRITE;
 INSERT INTO `USER_LOGIN`
-VALUES (1,'rui.gao','高瑞','123456','rui.gao@126.com',1,CURDATE(),NOW(),1,1),
+VALUES (1,'rui.gao','高瑞','123456','rui.gao@126.com',1,CURDATE(),NOW(),1,8),
        (2,'xinxin.xu','徐鑫鑫','123456','xinxin.xu@126.com',2,CURDATE(),NOW(),1,1),
        (3,'luli.dai','代禄礼','123456','luli.dai@126.com',3,CURDATE(),NOW(),1,1),
        (4,'erhu.xu','徐二虎','123456','erhu.xu@126.com',4,CURDATE(),NOW(),1,1);
