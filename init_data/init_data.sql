@@ -23,10 +23,16 @@ UNLOCK TABLES;
 
 LOCK TABLES `USER_LOGIN` WRITE;
 INSERT INTO `USER_LOGIN`
-VALUES (1,'rui.gao','高瑞','123456','rui.gao@126.com',1,CURDATE(),NOW(),1,8),
-       (2,'xinxin.xu','徐鑫鑫','123456','xinxin.xu@126.com',2,CURDATE(),NOW(),1,1),
-       (3,'luli.dai','代禄礼','123456','luli.dai@126.com',3,CURDATE(),NOW(),1,1),
-       (4,'erhu.xu','徐二虎','123456','erhu.xu@126.com',4,CURDATE(),NOW(),1,1);
+VALUES (1,'rui.gao','高瑞','123456','rui.gao@126.com',8,CURDATE(),NOW(),1,1),
+       (2,'xinxin.xu','徐鑫鑫','123456','xinxin.xu@126.com',10,CURDATE(),NOW(),1,1),
+       (3,'luli.dai','代禄礼','123456','luli.dai@126.com',10,CURDATE(),NOW(),1,1),
+       (4,'erhu.xu','徐二虎','123456','erhu.xu@126.com',10,CURDATE(),NOW(),1,1),
+       (5,'aa.dai','aaa','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1),
+       (6,'bb.dai','bbb','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1),
+       (7,'cc.dai','ccc','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1),
+       (8,'dd.dai','ddd','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1),
+       (9,'ee.dai','eee','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1),
+       (10,'ff.dai','fff','123456','luli.dai@126.com',11,CURDATE(),NOW(),1,1);
 UNLOCK TABLES;
 
 LOCK TABLES `USER_LOGIN_EXT` WRITE;
@@ -34,7 +40,13 @@ INSERT INTO `USER_LOGIN_EXT`
 VALUES (1,1,1,CURDATE(),NULL,'13918441215','上海'),
        (2,2,1,CURDATE(),NULL,'13918444315','上海'),
        (3,3,1,CURDATE(),NULL,'13918456215','上海'),
-       (4,4,1,CURDATE(),NULL,'13914341215','上海');
+       (4,4,1,CURDATE(),NULL,'13914341215','上海'),
+       (5,5,1,CURDATE(),NULL,'13918456215','上海'),
+       (6,6,1,CURDATE(),NULL,'13918456215','上海'),
+       (7,7,1,CURDATE(),NULL,'13918456215','上海'),
+       (8,8,1,CURDATE(),NULL,'13918456215','上海'),
+       (9,9,1,CURDATE(),NULL,'13918456215','上海'),
+       (10,10,1,CURDATE(),NULL,'13918456215','上海');
 UNLOCK TABLES;
 
 LOCK TABLES `DEPARTMENT` WRITE;
